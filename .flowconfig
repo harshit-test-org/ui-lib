@@ -1,0 +1,14 @@
+[ignore]
+.*/dist/.*
+node_modules/*
+.*/node_modules/styled-components/.*
+
+[include]
+
+[libs]
+
+[lints]
+
+[options]
+
+[strict]

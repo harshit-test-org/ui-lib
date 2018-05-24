@@ -1,0 +1,42 @@
+0 silly input [ 'build' ]
+1 silly flags { _: [ 'run' ],
+1 silly flags   'reject-cycles': false,
+1 silly flags   rejectCycles: false,
+1 silly flags   script: 'build',
+1 silly flags   args: [] }
+2 verbose rootPath C:\code\ui-lib
+3 info version 2.11.0
+4 silly existsSync C:\code\ui-lib\VERSION
+5 info versioning independent
+6 silly initialize attempt
+7 silly initialize success
+8 silly execute attempt
+9 silly runScriptInDir build [] Button
+10 silly getExecOpts { cwd: 'C:\\code\\ui-lib\\components\\Button' }
+11 error build Errored while running script in '@jsaf/button'
+12 error execute callback with error
+13 error Error: Command failed: yarn run build
+13 error warning package.json: No license field
+13 error warning package.json: No license field
+13 error warning package.json: No license field
+13 error Error: EISDIR: illegal operation on a directory, open 'C:\code\ui-lib\components\Button\dist'
+13 error     at Object.fs.openSync (fs.js:646:18)
+13 error     at Object.fs.writeFileSync (fs.js:1299:33)
+13 error     at output (C:\code\ui-lib\node_modules\babel-cli\lib\babel\file.js:90:10)
+13 error     at walk (C:\code\ui-lib\node_modules\babel-cli\lib\babel\file.js:150:5)
+13 error     at files (C:\code\ui-lib\node_modules\babel-cli\lib\babel\file.js:156:7)
+13 error     at module.exports (C:\code\ui-lib\node_modules\babel-cli\lib\babel\file.js:184:5)
+13 error     at Object.<anonymous> (C:\code\ui-lib\node_modules\babel-cli\lib\babel\index.js:129:1)
+13 error     at Module._compile (module.js:652:30)
+13 error     at Object.Module._extensions..js (module.js:663:10)
+13 error     at Module.load (module.js:565:32)
+13 error error Command failed with exit code 1.
+13 error error Command failed with exit code 1.
+13 error $ yarn run clean && yarn rollup
+13 error $ rimraf dist && mkdir dist
+13 error $ cross-env NODE_ENV=production babel src/ -o dist/
+13 error info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+13 error info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+13 error
+13 error     at Promise.all.then.arr (C:\code\ui-lib\node_modules\execa\index.js:236:11)
+13 error     at <anonymous>
