@@ -29,6 +29,7 @@ rules:
   - error
   - semi: false
     singleQuote: true
-    printWidth: 120
+    printWidth: 60
 plugins:
 - prettier
+- flowtype

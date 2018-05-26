@@ -1,6 +1,6 @@
 [ignore]
 .*/dist/.*
-node_modules/*
+.*/node_modules/*
 .*/node_modules/styled-components/.*
 
 [include]

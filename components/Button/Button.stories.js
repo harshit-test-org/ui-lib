@@ -6,4 +6,7 @@ import { storiesOf } from '@storybook/react'
 
 import Button from './'
 
-storiesOf('Button', module).add('with somet text test', () => <Button>Hello Button</Button>)
+storiesOf('Button', module).add(
+  'with somet text test',
+  () => <Button>Hello Button</Button>
+)

@@ -12,7 +12,9 @@ type Props = {
 
 class Button extends React.Component<Props> {
   render() {
-    return <ButtonStyled>{this.props.children}</ButtonStyled>
+    return (
+      <ButtonStyled>{this.props.children}</ButtonStyled>
+    )
   }
 }
 
