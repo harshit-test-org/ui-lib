@@ -26,8 +26,12 @@ const generateStyledTypography = (
 ) => {
   return styled(ctype)`
     ${baseCss}
-    font-size: ${headlineMapping[type].size};
-    color: ${headlineMapping[type].color};
+    font-size: ${(headlineMapping[type] &&
+      headlineMapping[type].size) ||
+      '1rem'};
+    color: ${(headlineMapping[type] &&
+      headlineMapping[type].color) ||
+      '#000000'};
   `
 }
 
@@ -79,7 +83,10 @@ class Typography extends React.Component<Props> {
       ...others
     } = this.props
     const ctype: string | Function =
-      component || headlineMapping[type].type || 'span'
+      component ||
+      (headlineMapping[type] &&
+        headlineMapping[type].type) ||
+      'span'
     const StyledType = generateStyledTypography(ctype, type)
 
     return <StyledType {...others}>{children}</StyledType>

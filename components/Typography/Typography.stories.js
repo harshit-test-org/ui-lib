@@ -25,3 +25,8 @@ storiesOf('Typography', module)
   .add('h5', () => (
     <Typography type="h5">Heading 5</Typography>
   ))
+  .add('fallback', () => (
+    <Typography type="something">
+      Fallback when no valid type prop
+    </Typography>
+  ))
