@@ -1,5 +1,5 @@
 import * as React from 'react'
-
+import theme from '../theme'
 import { storiesOf } from '@storybook/react'
 // import { action } from '@storybook/addon-actions'
 // import { linkTo } from '@storybook/addon-links'
@@ -25,8 +25,8 @@ storiesOf('Button', module)
   ))
   .add('danger Button', () => (
     <Fragment>
-      <Button danger>Normal</Button>
-      <Button danger disabled>
+      <Button color={theme.dangerColor}>Normal</Button>
+      <Button color={theme.dangerColor} disabled>
         Disabled
       </Button>
     </Fragment>

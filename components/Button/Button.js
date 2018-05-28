@@ -1,9 +1,8 @@
 // @flow
-import * as React from 'react'
-import styled, { withTheme } from 'styled-components'
+import styled from 'styled-components'
 import themeGlobal from '../theme'
 
-const ButtonSty = styled.button`
+const Button = styled.button`
   font-family: ${props =>
     props.theme.monospaceFamily ||
     themeGlobal.monospaceFont};
@@ -61,21 +60,5 @@ const ButtonSty = styled.button`
     opacity: 1;
   }
 `
-
-const Button = withTheme(
-  ({ theme, danger, children, ...others }) => (
-    <ButtonSty
-      color={
-        danger
-          ? (theme && theme.dangerColor) ||
-            themeGlobal.dangerColor
-          : null
-      }
-      {...others}
-    >
-      {children}
-    </ButtonSty>
-  )
-)
 
 export { Button }
