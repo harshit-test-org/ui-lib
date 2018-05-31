@@ -5,8 +5,7 @@ import styled, { css } from 'styled-components'
 import theme from '../theme'
 
 const baseCss = css`
-  font-family: ${props =>
-    props.theme.sansFont || theme.sansFont};
+  font-family: ${props => props.theme.sansFont};
 `
 
 type Props = {
@@ -24,7 +23,7 @@ const generateStyledTypography = (
   ctype: any,
   type: string
 ) => {
-  return styled(ctype)`
+  const C = styled(ctype)`
     ${baseCss}
     font-size: ${(headlineMapping[type] &&
       headlineMapping[type].size) ||
@@ -33,6 +32,12 @@ const generateStyledTypography = (
       headlineMapping[type].color) ||
       '#000000'};
   `
+
+  C.defaultProps = {
+    theme: theme
+  }
+
+  return C
 }
 
 const headlineMapping: {

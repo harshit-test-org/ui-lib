@@ -65,7 +65,7 @@ const ButtonComp = styled.button`
 
 type Props = {
   children: any,
-  varient: ?string
+  varient: string
 }
 
 const Button = (props: Props) => {
@@ -82,7 +82,7 @@ const Button = (props: Props) => {
   )
 }
 
-Button.defaultProps = {
+ButtonComp.defaultProps = {
   theme: themeGlobal
 }
 
