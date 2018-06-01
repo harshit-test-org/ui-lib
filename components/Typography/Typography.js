@@ -11,7 +11,8 @@ const baseCss = css`
 type Props = {
   type: string,
   component: string | Function,
-  children: any
+  children: any,
+  margin: number
 }
 
 type Headline = {
@@ -21,7 +22,8 @@ type Headline = {
 
 const generateStyledTypography = (
   ctype: any,
-  type: string
+  type: string,
+  margin: number = 14
 ) => {
   const C = styled(ctype)`
     ${baseCss}
@@ -31,6 +33,8 @@ const generateStyledTypography = (
     color: ${(headlineMapping[type] &&
       headlineMapping[type].color) ||
       '#000000'};
+    margin: ${margin}px;
+    font-weight: normal;   
   `
 
   C.defaultProps = {
@@ -79,23 +83,24 @@ const headlineMapping: {
     color: 'rgba(0,0,0,0.87)'
   }
 }
-class Typography extends React.Component<Props> {
-  render() {
-    const {
-      type,
-      component,
-      children,
-      ...others
-    } = this.props
-    const ctype: string | Function =
-      component ||
-      (headlineMapping[type] &&
-        headlineMapping[type].type) ||
-      'span'
-    const StyledType = generateStyledTypography(ctype, type)
-
-    return <StyledType {...others}>{children}</StyledType>
-  }
+const Typography = (props: Props) => {
+  const {
+    type,
+    component,
+    children,
+    margin,
+    ...others
+  } = props
+  const ctype: string | Function =
+    component ||
+    (headlineMapping[type] && headlineMapping[type].type) ||
+    'span'
+  const StyledType = generateStyledTypography(
+    ctype,
+    type,
+    margin
+  )
+  return <StyledType {...others}>{children}</StyledType>
 }
 
 export { Typography }
