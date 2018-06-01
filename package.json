@@ -38,6 +38,8 @@
     "react-dom": "^16.3.2"
   },
   "devDependencies": {
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
     "@storybook/addon-actions": "^3.4.5",
     "@storybook/addon-links": "^3.4.5",
     "@storybook/addons": "^3.4.5",
