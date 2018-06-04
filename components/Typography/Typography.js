@@ -54,17 +54,17 @@ const headlineMapping: {
 } = {
   xl: {
     type: 'h1',
-    size: '6rem',
+    size: '3rem',
     color: 'rgba(0,0,0,0.75)'
   },
   h1: {
     type: 'h1',
-    size: '3.75rem',
+    size: '2.6rem',
     color: 'rgba(0,0,0,0.75)'
   },
   h2: {
     type: 'h2',
-    size: '3rem',
+    size: '2.3rem',
     color: 'rgba(0,0,0,0.87)'
   },
   h3: {
