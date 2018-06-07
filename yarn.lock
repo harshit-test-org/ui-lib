@@ -9,15 +9,6 @@
     "@atlaskit/theme" "^3.2.2"
     styled-components "1.4.6 - 3"
 
-"@atlaskit/lozenge@^4.1.1":
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/@atlaskit/lozenge/-/lozenge-4.1.1.tgz#91db746989a4e83e9b38ad03363f5fb63e4f34bc"
-  dependencies:
-    "@atlaskit/theme" "^3.1.1"
-    "@atlaskit/util-shared-styles" "^2.10.3"
-    babel-runtime "^6.26.0"
-    styled-components "1.4.6 - 3"
-
 "@atlaskit/spinner@^5.0.2":
   version "5.0.2"
   resolved "https://registry.yarnpkg.com/@atlaskit/spinner/-/spinner-5.0.2.tgz#a28ba94ae6a1c12f6ab6955e97db90f62546e95f"
@@ -27,12 +18,18 @@
     react-transition-group "^2.2.1"
     styled-components "1.4.6 - 3"
 
-"@atlaskit/theme@^3.1.1", "@atlaskit/theme@^3.2.2":
+"@atlaskit/theme@^3.2.2":
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/@atlaskit/theme/-/theme-3.2.2.tgz#14e55188a6561e34fa697445ec5582ef0c733942"
   dependencies:
     prop-types "^15.5.10"
     styled-components "1.4.6 - 3"
+
+"@atlaskit/theme@^4.0.1":
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/@atlaskit/theme/-/theme-4.0.1.tgz#063c62a1baffdf297c2441446d2597017a323e60"
+  dependencies:
+    prop-types "^15.5.10"
 
 "@atlaskit/util-shared-styles@^2.10.3":
   version "2.10.8"
@@ -129,6 +126,14 @@
     esutils "^2.0.2"
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
+
+"@harshitpant/textbadge@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@harshitpant/textbadge/-/textbadge-0.0.1.tgz#815af3c03c32b4edd4b3bd6cfc4dd479bd90d2cb"
+  dependencies:
+    "@atlaskit/theme" "^4.0.1"
+    "@atlaskit/util-shared-styles" "^2.10.3"
+    babel-runtime "^6.26.0"
 
 "@storybook/addon-actions@3.4.5", "@storybook/addon-actions@^3.4.5":
   version "3.4.5"

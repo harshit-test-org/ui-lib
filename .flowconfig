@@ -1,6 +1,5 @@
 [ignore]
 .*/dist/.*
-.*/node_modules/*
 .*/node_modules/styled-components/.*
 
 [include]
@@ -8,7 +7,15 @@
 [libs]
 
 [lints]
+untyped-type-import=error
+untyped-import=warn
+unclear-type=warn
+unsafe-getters-setters=error
 
 [options]
+suppress_comment= \\(.\\|\n\\)*\\$FlowFixMe
+suppress_comment=.*\\$FlowFixMe
+module.system.node.resolve_dirname=node_modules
+module.system.node.resolve_dirname=.
 
 [strict]
