@@ -2,13 +2,19 @@
 
 import * as React from 'react'
 import styled from 'styled-components'
+import shadows from '../utils/shadows'
 import theme from '../theme'
+
+const shadow = shadows[2]
 
 const StyledAppBar = styled.header`
   font-family: ${props => props.theme.sansFont};
   display: flex;
-  background: ${props => props.theme.primaryColor};
-  padding: 0.5rem;
+  box-shadow: ${shadow};
+  top: 0;
+  left: auto;
+  right: 0;
+  position: absolute;
   img {
     width: 40px;
     height: auto;
@@ -25,13 +31,7 @@ type Props = {
 
 const Appbar = (props: Props) => {
   return (
-    <StyledAppBar>
-      <img
-        src="https://beta.javascript.af/static/logo.png"
-        alt="logo"
-      />
-      {props.children}
-    </StyledAppBar>
+    <StyledAppBar {...props}>{props.children}</StyledAppBar>
   )
 }
 
