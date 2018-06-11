@@ -36,7 +36,7 @@ const Cards = () => (
   </Card>
 )
 
-storiesOf('CardHorizontalScoller', module).add(
+storiesOf('CardHorizontalScroller', module).add(
   'Basic',
   () => (
     <CardHorizontalScroller>
