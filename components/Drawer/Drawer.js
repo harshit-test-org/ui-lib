@@ -16,6 +16,7 @@ const DrawerStyle = styled.div`
   background: ${props => props.theme.primaryColor};
   .logo {
     display: flex;
+    background: ${props => props.theme.primaryLightColor};
     .jsui-drawer-title {
       color: #ffffff;
     }

@@ -1,4 +1,5 @@
 {
-  "presets": ["react-app"],
-  "plugins": ["external-helpers"]
+  "presets": [
+    "react-app"
+  ]
 }

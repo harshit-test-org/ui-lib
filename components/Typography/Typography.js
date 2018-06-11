@@ -1,47 +1,13 @@
-// @flow strict
+// // @flow strict
 
 import * as React from 'react'
 import styled, { css } from 'styled-components'
+import classNames from 'classnames'
 import theme from '../theme'
-
-const baseCss = css`
-  font-family: ${props => props.theme.sansFont};
-`
-
-type Props = {
-  type: string,
-  component: string | Function,
-  children: any,
-  margin: number
-}
 
 type Headline = {
   type: string,
   size: string
-}
-
-const generateStyledTypography = (
-  ctype: any,
-  type: string,
-  margin: number = 14
-) => {
-  const C = styled(ctype)`
-    ${baseCss}
-    font-size: ${(headlineMapping[type] &&
-      headlineMapping[type].size) ||
-      '1rem'};
-    color: ${(headlineMapping[type] &&
-      headlineMapping[type].color) ||
-      '#000000'};
-    margin: ${margin}px;
-    font-weight: normal;   
-  `
-
-  C.defaultProps = {
-    theme: theme
-  }
-
-  return C
 }
 
 const headlineMapping: {
@@ -83,24 +49,57 @@ const headlineMapping: {
     color: 'rgba(0,0,0,0.87)'
   }
 }
-const Typography = (props: Props) => {
-  const {
-    type,
-    component,
-    children,
-    margin,
-    ...others
-  } = props
-  const ctype: string | Function =
+
+type Props = {
+  type: string,
+  className: string,
+  children: any
+}
+
+const TypographyComponent = ({
+  className,
+  component,
+  margin,
+  type = 'default',
+  ...props
+}: Props) => {
+  const Component =
     component ||
     (headlineMapping[type] && headlineMapping[type].type) ||
     'span'
-  const StyledType = generateStyledTypography(
-    ctype,
-    type,
-    margin
+  return (
+    <Component
+      className={classNames(className, `jsui-typo-${type}`)}
+      {...props}
+    />
   )
-  return <StyledType {...others}>{children}</StyledType>
+}
+
+const allStyles = Object.entries(headlineMapping).map(
+  current => {
+    const type = current[0]
+    const val = current[1]
+    return css`
+      &.jsui-typo-${type} {
+        font-size: ${val.size};
+        color: ${val.color};
+      }
+    `
+  }
+)
+
+const Typography = styled(TypographyComponent)`
+  ${props =>
+    typeof props.margin !== 'undefined'
+      ? `margin: ${props.margin}px;`
+      : ''}
+  font-family: ${props => props.theme.sansFont};
+  ${allStyles.map(i => i)}
+   font-weight: normal;
+`
+
+Typography.defaultProps = {
+  theme
 }
 
 export { Typography }

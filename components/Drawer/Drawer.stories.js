@@ -38,7 +38,9 @@ storiesOf('Drawer', module).add('basic', () => (
         width={`${drawerWidth}px`}
       />
       <AppbarWithShift>
-        <Typography type="h4">Home</Typography>
+        <Typography type="h4" margin={16}>
+          Home
+        </Typography>
       </AppbarWithShift>
     </Layout>
   </React.Fragment>
