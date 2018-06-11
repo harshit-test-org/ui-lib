@@ -59,7 +59,6 @@ type Props = {
 const TypographyComponent = ({
   className,
   component,
-  margin,
   type = 'default',
   ...props
 }: Props) => {
@@ -96,6 +95,8 @@ const Typography = styled(TypographyComponent)`
   font-family: ${props => props.theme.sansFont};
   ${allStyles.map(i => i)}
    font-weight: normal;
+  ${props =>
+    props.color ? `color:${props.color} !important;` : ''}
 `
 
 Typography.defaultProps = {

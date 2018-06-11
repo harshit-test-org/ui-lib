@@ -1,6 +1,6 @@
 {
   "name": "javascript-af-ui",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "UI kit for javascript.af",
   "browser": "./umd/jsui.umd.production.js",
   "main": "./index.js",

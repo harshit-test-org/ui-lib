@@ -7,5 +7,7 @@ export default {
   secondaryColor: '#BDC3C7',
   secondaryDarkColor: '#8D9396',
   dangerColor: '#F44336',
-  dangerDarkColor: '#BA000D'
+  dangerDarkColor: '#BA000D',
+  primaryGradient:
+    'linear-gradient(to bottom, #6200ee 0%,#4600aa 52%,#310077 100%);'
 }
