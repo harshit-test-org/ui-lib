@@ -17,7 +17,7 @@ const DrawerStyle = styled.div`
   .logo {
     img {
       width: 50px;
-      height: 100%;
+      height: 50px;
     }
     margin-bottom: 1.5rem;
   }
