@@ -47,6 +47,9 @@ const ChevronStyles = styled.button`
   background: #fff;
   cursor: pointer;
   margin: 0;
+  padding: 0;
+  height: 48px;
+  width: 48px;
   border: none;
   border-radius: 100%;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 8px 0px,
