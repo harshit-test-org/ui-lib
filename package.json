@@ -1,31 +1,29 @@
 {
   "name": "javascript-af-ui",
-  "version": "0.0.13",
+  "version": "0.0.15",
   "description": "UI kit for javascript.af",
   "browser": "./umd/jsui.umd.production.js",
   "main": "./index.js",
-  "repository":
-    "https://github.com/javascript-af/ui-lib.git",
+  "repository": "https://github.com/javascript-af/ui-lib.git",
   "author": "Harshit Pant <pantharshit00@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/javascript-af/ui-lib/issues"
   },
-  "keywords": ["react", "react-component"],
+  "keywords": [
+    "react",
+    "react-component"
+  ],
   "private": false,
   "scripts": {
     "precommit": "lint-staged && yarn run test",
     "develop": "start-storybook -p 9001 -c .storybook",
-    "build:storybook":
-      "build-storybook -c .storybook -o build",
+    "build:storybook": "build-storybook -c .storybook -o build",
     "build:umd": "cross-env NODE_ENV=production rollup -c",
     "prebuild": "rimraf dist/",
-    "copyfiles":
-      "cp README.md dist/ && cp LICENSE dist/ && cp package.json dist/",
-    "build":
-      "yarn run build:umd && yarn run build:modules && yarn run copyfiles",
-    "build:modules":
-      "cross-env BABEL_ENV=production babel --plugins transform-es2015-modules-commonjs components/ -d dist/ --ignore *.stories.js",
+    "copyfiles": "cp README.md dist/ && cp LICENSE dist/ && cp package.json dist/",
+    "build": "yarn run build:umd && yarn run build:modules && yarn run copyfiles",
+    "build:modules": "cross-env BABEL_ENV=production babel --plugins transform-es2015-modules-commonjs components/ -d dist/ --ignore *.stories.js",
     "prerelease": "yarn build",
     "release": "npm publish dist"
   },
@@ -52,8 +50,7 @@
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.3",
     "babel-plugin-external-helpers": "^6.22.0",
-    "babel-plugin-transform-es2015-modules-commonjs":
-      "^6.26.2",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "babel-preset-react-app": "^3.1.1",
     "cross-env": "^5.1.6",
     "eslint": "^4.19.1",
