@@ -1,4 +1,4 @@
-// @flow strict
+// @flow
 import * as React from 'react'
 import styled from 'styled-components'
 
@@ -63,14 +63,21 @@ const ChevronStyles = styled.button`
   ${props => (props.right ? 'right: 0;' : '')};
 `
 
-class CardHorizontalScroller extends React.Component<{
-  children: any
-}> {
+class CardHorizontalScroller extends React.Component<
+  {
+    children: any
+  },
+  {
+    canScrollLeft: boolean,
+    canScrollRight: boolean
+  }
+> {
+  node: HTMLDivElement
   state = {
     canScrollLeft: false,
     canScrollRight: true
   }
-  handleScroll(direction) {
+  handleScroll(direction: number) {
     const delta = direction * this.node.clientWidth
     const futureScrollLeft = this.node.scrollLeft + delta
     // Update in which direction the user could scroll
@@ -82,6 +89,7 @@ class CardHorizontalScroller extends React.Component<{
       canScrollLeft,
       canScrollRight
     })
+    // $FlowFixMe
     this.node.scrollBy({
       left: delta,
       behavior: 'smooth'

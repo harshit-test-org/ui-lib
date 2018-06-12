@@ -13,6 +13,7 @@ const ButtonComp = styled.button`
   margin: 0.5rem;
   opacity: 0.9;
   padding: 0.5rem 1rem;
+  outline: none;
   border-radius: 1.2rem;
   cursor: pointer;
   transition: 0.3s ease-in-out all;

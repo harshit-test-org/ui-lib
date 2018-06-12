@@ -53,7 +53,8 @@ const headlineMapping: {
 type Props = {
   type: string,
   className: string,
-  children: any
+  children: any,
+  component: any
 }
 
 const TypographyComponent = ({
@@ -74,10 +75,15 @@ const TypographyComponent = ({
   )
 }
 
+type StyleValue = {
+  size: string,
+  color: string
+}
+
 const allStyles = Object.entries(headlineMapping).map(
-  current => {
+  (current: [string, any]) => {
     const type = current[0]
-    const val = current[1]
+    const val: StyleValue = current[1]
     return css`
       &.jsui-typo-${type} {
         font-size: ${val.size};

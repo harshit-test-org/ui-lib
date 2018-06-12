@@ -1,5 +1,8 @@
 import * as React from 'react'
 import { storiesOf } from '@storybook/react'
+import styled from 'styled-components'
+import classNames from 'classnames'
+import Button from '../Button'
 // import { action } from '@storybook/addon-actions'
 // import { linkTo } from '@storybook/addon-links'
 
@@ -61,19 +64,90 @@ const NewsIcon = () => (
   </svg>
 )
 
+const LayoutContainer = styled.div`
+  display: flex;
+`
+
+const DrawerWithExpansion = styled(Drawer)`
+  transition: all 0.4s ease-in-out;
+  padding: 1.5rem;
+  &.jsui-drawer-collapsed {
+    width: 45px;
+  }
+`
+
+const DrawerMenuItemWithExpansion = styled(DrawerMenuItem)`
+  &.jsui-draweritem-collapsed {
+    & .jsui-drawermenu-text {
+      display: none;
+    }
+    & .logo > img {
+      margin-left: -4px;
+    }
+  }
+`
+
+class Layout extends React.Component {
+  state = {
+    open: true
+  }
+  handleExpansionToggle = () => {
+    this.setState(s => ({
+      open: !s.open
+    }))
+  }
+  render() {
+    return (
+      <LayoutContainer>
+        <DrawerWithExpansion
+          className={classNames({
+            'jsui-drawer-collapsed': this.state.open
+          })}
+          logo="https://uploads.codesandbox.io/uploads/user/e59603ee-ad08-4d84-8a86-840c67d4ddfc/RQ---logo.png"
+        >
+          <DrawerMenuItemWithExpansion
+            className={classNames({
+              'jsui-draweritem-collapsed': this.state.open
+            })}
+            icon={<HomeIcon />}
+          >
+            Repositories
+          </DrawerMenuItemWithExpansion>
+          <DrawerMenuItemWithExpansion
+            className={classNames({
+              'jsui-draweritem-collapsed': this.state.open
+            })}
+            icon={<HeadPhonesIcon />}
+          >
+            Talks
+          </DrawerMenuItemWithExpansion>
+          <DrawerMenuItemWithExpansion
+            className={classNames({
+              'jsui-draweritem-collapsed': this.state.open
+            })}
+            icon={<TrendingIcon />}
+          >
+            Featured
+          </DrawerMenuItemWithExpansion>
+          <DrawerMenuItemWithExpansion
+            className={classNames({
+              'jsui-draweritem-collapsed': this.state.open
+            })}
+            icon={<NewsIcon />}
+          >
+            News
+          </DrawerMenuItemWithExpansion>
+        </DrawerWithExpansion>
+        <div>
+          <Button onClick={this.handleExpansionToggle}>
+            Collapse
+          </Button>
+        </div>
+      </LayoutContainer>
+    )
+  }
+}
+
 storiesOf('Drawer', module).add('primary drawer', () => (
-  <Drawer logo="https://beta.javascript.af/static/logo.png">
-    <DrawerMenuItem icon={<HomeIcon />}>
-      Repositories
-    </DrawerMenuItem>
-    <DrawerMenuItem icon={<HeadPhonesIcon />}>
-      Talks
-    </DrawerMenuItem>
-    <DrawerMenuItem icon={<TrendingIcon />}>
-      Featured
-    </DrawerMenuItem>
-    <DrawerMenuItem icon={<NewsIcon />}>
-      Dev News
-    </DrawerMenuItem>
-  </Drawer>
+  <Layout />
 ))
