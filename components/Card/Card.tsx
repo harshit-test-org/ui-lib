@@ -3,7 +3,7 @@
 import * as React from 'react'
 import styled, { css } from 'styled-components'
 import theme from '../theme'
-import classNames from 'classnames'
+import * as classNames from 'classnames'
 import shadows from '../utils/shadows'
 
 const CardStyled = styled.div`
@@ -27,7 +27,7 @@ CardStyled.defaultProps = {
   theme
 }
 
-type Props = {
+export interface Props {
   children: any,
   elevation: number
 }
@@ -39,12 +39,12 @@ const Card = ({
 }: Props) => {
   return (
     <CardStyled
-      {...others}
-      className={classNames({
-        [`jsui-card-shadow-${elevation}`]: elevation
-      })}
+      { ...others }
+      className={ classNames({
+        [`jsui-card-shadow-${elevation}`]: !!elevation
+      }) }
     >
-      {children}
+      { children }
     </CardStyled>
   )
 }

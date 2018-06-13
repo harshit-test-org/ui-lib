@@ -22,19 +22,19 @@ const DrawerMenuItemStyles = styled.div`
   }
 `
 
-type Props = {
+export interface Props {
   children: string,
-  icon: React.Node
+  icon: React.ReactNode
 }
 
 const DrawerMenuItem = (props: Props) => {
   const { icon, children, ...others } = props
   return (
-    <DrawerMenuItemStyles {...others}>
-      <div className="jsui-drawermenu-icon">{icon}</div>
+    <DrawerMenuItemStyles { ...others }>
+      <div className="jsui-drawermenu-icon">{ icon }</div>
       <div className="jsui-drawermenu-text">
-        <Typography type="h4" margin={0} color="#ffffff">
-          {children}
+        <Typography type="h4" margin={ 0 } color="#ffffff">
+          { children }
         </Typography>
       </div>
     </DrawerMenuItemStyles>

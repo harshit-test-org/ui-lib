@@ -11,7 +11,7 @@ const globals = {
 }
 
 export default {
-  input: 'components/index.js',
+  input: 'dist/index.js',
   output: {
     file: 'dist/umd/jsui.umd.production.js',
     format: 'umd',

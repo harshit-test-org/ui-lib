@@ -6,14 +6,19 @@ import shadows from '../utils/shadows'
 
 const shadow = shadows[6]
 
+export interface P {
+  theme: any,
+  width: string
+}
+
 const DrawerStyle = styled.div`
-  width: ${props => props.width || '200px'};
-  font-family: ${props => props.theme.sansFont};
+  width: ${(props: P) => props.width || '200px'};
+  font-family: ${(props: P) => props.theme.sansFont};
   box-shadow: ${shadow};
   height: 100%;
   padding: 0.5rem;
   min-height: 100vh;
-  background: ${props => props.theme.primaryGradient};
+  background: ${(props: P) => props.theme.primaryGradient};
   .logo {
     img {
       width: 50px;
@@ -27,20 +32,17 @@ DrawerStyle.defaultProps = {
   theme
 }
 
-type Props = {
-  logo: {
-    title: string,
-    img: string
-  },
+export interface Props {
+  logo: string,
   children: any
 }
 
 const Drawer = ({ logo, children, ...others }: Props) => (
-  <DrawerStyle {...others}>
+  <DrawerStyle { ...others }>
     <div className="logo">
-      <img src={logo} alt="logo" />
+      <img src={ logo } alt="logo" />
     </div>
-    {children}
+    { children }
   </DrawerStyle>
 )
 

@@ -1,8 +1,8 @@
 // @flow
-import React from 'react'
+import * as React from 'react'
 import styled from 'styled-components'
-import themeGlobal from '../theme'
-import classNames from 'classnames'
+import theme from '../theme'
+import * as classNames from 'classnames'
 
 const ButtonComp = styled.button`
   font-family: ${props => props.theme.monospaceFont};
@@ -64,7 +64,7 @@ const ButtonComp = styled.button`
   }
 `
 
-type Props = {
+export interface Props {
   children: any,
   varient: string
 }
@@ -73,18 +73,20 @@ const Button = (props: Props) => {
   const { varient, children, ...others } = props
   return (
     <ButtonComp
-      {...others}
-      className={classNames({
-        [`jsui-button-${varient}`]: varient
-      })}
+      { ...others }
+      className={
+        classNames({
+          [`jsui-button-${varient}`]: !!varient
+        })
+      }
     >
-      {children}
+      { children }
     </ButtonComp>
   )
 }
 
 ButtonComp.defaultProps = {
-  theme: themeGlobal
+  theme
 }
 
 export { Button }

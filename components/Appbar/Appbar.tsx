@@ -25,13 +25,13 @@ StyledAppBar.defaultProps = {
   theme
 }
 
-type Props = {
+export interface Props {
   children: any
 }
 
 const Appbar = (props: Props) => {
   return (
-    <StyledAppBar {...props}>{props.children}</StyledAppBar>
+    <StyledAppBar { ...props }>{ props.children }</StyledAppBar>
   )
 }
 

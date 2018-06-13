@@ -6,8 +6,8 @@ import styled from 'styled-components'
 
 import theme from '../theme'
 
-type Props = {
-  title: ?string
+export interface Props {
+  title?: string
 }
 
 const StyledCardHeader = styled.div`
@@ -21,16 +21,16 @@ StyledCardHeader.defaultProps = {
 
 const CardHeader = ({ title, ...others }: Props) => {
   return (
-    <StyledCardHeader {...others}>
-      {title && (
+    <StyledCardHeader { ...others }>
+      { title && (
         <Typography
-          margin={0}
+          margin={ 0 }
           className="jsui-card-header-title"
           type="h4"
         >
-          {title}
+          { title }
         </Typography>
-      )}
+      ) }
     </StyledCardHeader>
   )
 }
