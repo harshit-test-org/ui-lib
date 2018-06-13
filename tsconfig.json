@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "outDir": "dist",
-    "module": "esnext",
+    "module": "es6",
     "target": "es5",
     "lib": [
       "es6",
@@ -13,6 +13,7 @@
     "declaration": true,
     "jsx": "react",
     "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
     "rootDir": "components",
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,

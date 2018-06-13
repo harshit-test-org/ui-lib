@@ -2,7 +2,7 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import theme from '../theme'
-import * as classNames from 'classnames'
+import classNames from 'classnames'
 
 const ButtonComp = styled.button`
   font-family: ${props => props.theme.monospaceFont};
@@ -65,8 +65,8 @@ const ButtonComp = styled.button`
 `
 
 export interface Props {
-  children: any,
-  varient: string
+  children?: any,
+  varient?: 'secondary' | 'inverted' | 'danger'
 }
 
 const Button = (props: Props) => {

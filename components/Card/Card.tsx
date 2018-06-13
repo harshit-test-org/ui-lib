@@ -3,7 +3,7 @@
 import * as React from 'react'
 import styled, { css } from 'styled-components'
 import theme from '../theme'
-import * as classNames from 'classnames'
+import classNames from 'classnames'
 import shadows from '../utils/shadows'
 
 const CardStyled = styled.div`
