@@ -2,8 +2,8 @@
   "compilerOptions": {
     "baseUrl": ".",
     "outDir": "dist",
-    "module": "es6",
-    "target": "es5",
+    "module": "es2015",
+    "target": "es2017",
     "lib": [
       "es6",
       "esnext",
@@ -27,5 +27,8 @@
     "build",
     "dist",
     "rollup.config.js"
+  ],
+  "include": [
+    "components/**/*"
   ]
 }

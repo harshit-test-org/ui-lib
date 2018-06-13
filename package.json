@@ -17,20 +17,21 @@
   "private": false,
   "scripts": {
     "precommit": "lint-staged && yarn run test",
-    "develop": "start-storybook -p 9001 -c .storybook",
-    "build:storybook": "build-storybook -c .storybook -o build",
     "build:umd": "cross-env NODE_ENV=production rollup -c",
     "prebuild": "rimraf dist/",
     "copyfiles": "cp README.md dist/ && cp LICENSE dist/ && cp package.json dist/",
     "build": "yarn run build:modules && yarn run build:umd && yarn run copyfiles",
     "build:modules": "tsc",
+    "dev": "docz dev",
+    "build:docz": "docz build",
     "prerelease": "yarn build",
     "release": "npm publish dist"
   },
   "dependencies": {
     "@atlaskit/blanket": "^5.0.2",
     "@atlaskit/spinner": "^5.0.2",
-    "classnames": "^2.2.5"
+    "classnames": "^2.2.5",
+    "docz-theme-default": "^0.2.3"
   },
   "peerDependencies": {
     "react": "^16.3.2",
@@ -41,20 +42,15 @@
     "styled-components": "3.3.2"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^3.4.5",
-    "@storybook/addon-links": "^3.4.5",
-    "@storybook/addon-viewport": "^3.4.6",
-    "@storybook/addons": "^3.4.5",
-    "@storybook/react": "^3.4.5",
     "@types/classnames": "^2.2.4",
     "@types/node": "^10.3.2",
     "@types/react": "^16.3.17",
     "@types/react-dom": "^16.0.6",
     "babel-core": "^6.26.3",
-    "babel-preset-react-app": "^3.1.1",
+    "babel-preset-es2015-rollup": "^3.0.0",
     "cross-env": "^5.1.6",
+    "docz": "^0.2.3",
     "flow-bin": "^0.72.0",
-    "lerna": "^2.11.0",
     "prettier": "^1.12.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
