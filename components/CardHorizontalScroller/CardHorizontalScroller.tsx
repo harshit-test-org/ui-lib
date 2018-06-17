@@ -70,9 +70,6 @@ const ChevronStyles = styled.button`
 
 class CardHorizontalScroller extends React.Component<
   {
-    children: any
-  },
-  {
     canScrollLeft: boolean,
     canScrollRight: boolean
   }
@@ -94,7 +91,6 @@ class CardHorizontalScroller extends React.Component<
       canScrollLeft,
       canScrollRight
     })
-    // $FlowFixMe
     this.node.scrollBy({
       left: delta,
       behavior: 'smooth'
@@ -129,4 +125,4 @@ class CardHorizontalScroller extends React.Component<
   }
 }
 
-export { CardHorizontalScroller }
+export default CardHorizontalScroller

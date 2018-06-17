@@ -1,25 +1,29 @@
 ---
-name: Card
+name: CardhorizontalScroller
 ---
 
-import Card from './Card.tsx'
-import CardHeader from './CardHeader.tsx'
-import CardContent from './CardContent.tsx'
-import CardActions from './CardActions.tsx'
+import CardHorizontalScroller from './CardHorizontalScroller.tsx'
+import Card from '../Card/Card.tsx'
+import CardHeader from '../Card/CardHeader.tsx'
+import CardContent from '../Card/CardContent.tsx'
+import CardActions from '../Card/CardActions.tsx'
 import Button from '../Button/Button.tsx'
 import Typography from '../Typography/Typography.tsx'
 import { PropsTable, Playground } from 'docz'
 
-# Card
+# CardHorizontalScroller
 
-Card
+CardHorizontalScroller
 
 
 <Playground>
-  <Card
+  <CardHorizontalScroller>
+    {Array.from({length: 10}).map((_,i)=>(
+      <Card
+      key={i}
       elevation={ 2 }
       style={ {
-        maxWidth: '400px'
+        minWidth: '300px'
       } }
     >
       <CardHeader title="React" />
@@ -35,13 +39,11 @@ Card
         <Button>View</Button>
       </CardActions>
     </Card>
+    ))}
+  </CardHorizontalScroller>
 </Playground>
 
 
 ## Properties
 
-### Card
-<PropsTable of={Card}/>
-
-### CardAction
-<PropsTable of={CardHeader} />
+Receives only children as props

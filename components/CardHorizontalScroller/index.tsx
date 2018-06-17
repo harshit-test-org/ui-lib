@@ -1,3 +1,3 @@
 export {
-  CardHorizontalScroller as default
+  default
 } from './CardHorizontalScroller'
