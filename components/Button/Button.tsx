@@ -1,4 +1,3 @@
-// @flow
 import * as React from 'react'
 import styled from 'styled-components'
 import defaultTheme from '../theme'
@@ -63,28 +62,31 @@ const ButtonComp = styled.button`
   }
 `
 
+ButtonComp.defaultProps = {
+  theme: defaultTheme
+}
+
+
 export interface Props {
+  /**
+   * Visual Apperance of button, defaults to primary
+   */
   varient?: 'secondary' | 'inverted' | 'danger'
-  theme?: {
-    [key: string]: any
-  }
 }
 
 const Button: React.SFC<Props> = ({
   varient,
   children,
-  theme = defaultTheme,
   ...others
 }) => {
   return (
     <ButtonComp
-      {...others}
-      theme={theme}
-      className={classNames({
+      { ...others }
+      className={ classNames({
         [`jsui-button-${varient}`]: !!varient,
-      })}
+      }) }
     >
-      {children}
+      { children }
     </ButtonComp>
   )
 }

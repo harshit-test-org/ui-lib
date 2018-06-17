@@ -1,0 +1,42 @@
+---
+name: Card
+---
+
+import Card from './Card.tsx'
+import CardHeader from './CardHeader.tsx'
+import CardContent from './CardContent.tsx'
+import CardActions from './CardActions.tsx'
+import Button from '../Button/Button.tsx'
+import Typography from '../Typography/Typography.tsx'
+import { PropsTable, Playground } from 'docz'
+
+# Card
+
+Card
+
+
+<Playground>
+  <Card
+      elevation={ 2 }
+      style={ {
+        maxWidth: '400px'
+      } }
+    >
+      <CardHeader title="React" />
+      <CardContent>
+      <Typography>
+        React is Javascript library for making UI
+        interfaces. It makes simple things like form
+        handling hard and makes hard things like reusable
+        components simple. It is awesome anyways.
+      </Typography>
+      </CardContent>
+      <CardActions>
+        <Button>View</Button>
+      </CardActions>
+    </Card>
+</Playground>
+
+
+<PropsTable of={Card}/>
+

@@ -1,5 +1,3 @@
-// @flow strict
-
 import * as React from 'react'
 import styled, { css } from 'styled-components'
 import theme from '../theme'
@@ -29,14 +27,15 @@ CardStyled.defaultProps = {
 
 export interface Props {
   children: any,
-  elevation: number
+  elevation: number,
+  style?: React.CSSProperties
 }
 
-const Card = ({
+const Card: React.SFC<Props> = ({
   elevation,
   children,
   ...others
-}: Props) => {
+}) => {
   return (
     <CardStyled
       { ...others }
@@ -49,4 +48,4 @@ const Card = ({
   )
 }
 
-export { Card }
+export default Card 

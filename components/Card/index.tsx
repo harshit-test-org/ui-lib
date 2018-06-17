@@ -1,4 +1,4 @@
-export { Card as default } from './Card'
-export { CardHeader } from './CardHeader'
-export { CardContent } from './CardContent'
-export { CardActions } from './CardActions'
+export { default } from './Card'
+export { default as CardHeader } from './CardHeader'
+export { default as CardContent } from './CardContent'
+export { default as CardActions } from './CardActions'

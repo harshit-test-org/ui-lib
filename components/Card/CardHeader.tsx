@@ -19,7 +19,7 @@ StyledCardHeader.defaultProps = {
   theme
 }
 
-const CardHeader = ({ title, ...others }: Props) => {
+const CardHeader: React.SFC<Props> = ({ title, ...others }) => {
   return (
     <StyledCardHeader { ...others }>
       { title && (
@@ -35,4 +35,4 @@ const CardHeader = ({ title, ...others }: Props) => {
   )
 }
 
-export { CardHeader }
+export default CardHeader 

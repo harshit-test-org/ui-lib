@@ -1,5 +1,3 @@
-// // @flow strict
-
 import * as React from 'react'
 import styled, { css, StyledComponentClass } from 'styled-components'
 import classNames from 'classnames'
@@ -117,4 +115,4 @@ Typography.defaultProps = {
   theme
 }
 
-export { Typography }
+export default Typography

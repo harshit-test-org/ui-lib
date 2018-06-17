@@ -1,5 +1,3 @@
-// @flow strict
-
 import * as React from 'react'
 import theme from '../theme'
 import styled from 'styled-components'
@@ -14,10 +12,10 @@ StyledCardActions.defaultProps = {
   theme
 }
 
-const CardActions = (props: { children: any }) => {
+const CardActions: React.SFC = (props) => {
   return (
-    <StyledCardActions>{props.children}</StyledCardActions>
+    <StyledCardActions>{ props.children }</StyledCardActions>
   )
 }
 
-export { CardActions }
+export default CardActions

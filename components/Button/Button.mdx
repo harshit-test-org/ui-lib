@@ -1,11 +1,28 @@
 ---
-name: Hello world
+name: Button
 ---
 
 import Button from './Button.tsx'
+import { PropsTable, Playground } from 'docz'
 
-# Hello world
+# Button
 
-Hello, I'm still a mdx file, but now I have a button component!
+Button
 
-<Button>Click</Button>
+
+<Playground>
+  <Button>Normal</Button>
+  <Button disabled>Disabled</Button>
+  <Button varient="inverted">Normal</Button>
+  <Button varient="inverted" disabled>
+    Disabled
+  </Button>
+  <Button varient="danger">Normal</Button>
+  <Button varient="danger" disabled>
+    Disabled
+  </Button>
+</Playground>
+
+
+<PropsTable of={Button} />
+
