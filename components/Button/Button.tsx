@@ -1,7 +1,7 @@
 // @flow
 import * as React from 'react'
 import styled from 'styled-components'
-import theme from '../theme'
+import defaultTheme from '../theme'
 import classNames from 'classnames'
 
 const ButtonComp = styled.button`
@@ -40,8 +40,7 @@ const ButtonComp = styled.button`
   &.jsui-button-inverted {
     background: #ffffff;
     color: ${props => props.theme.primaryColor};
-    border: 2px solid
-      ${props => props.theme.primaryDarkColor};
+    border: 2px solid ${props => props.theme.primaryDarkColor};
   }
   &.jsui-button-inverted:hover {
     background: ${props => props.theme.primaryColor};
@@ -65,28 +64,29 @@ const ButtonComp = styled.button`
 `
 
 export interface Props {
-  children?: any,
   varient?: 'secondary' | 'inverted' | 'danger'
+  theme?: {
+    [key: string]: any
+  }
 }
 
-const Button = (props: Props) => {
-  const { varient, children, ...others } = props
+const Button: React.SFC<Props> = ({
+  varient,
+  children,
+  theme = defaultTheme,
+  ...others
+}) => {
   return (
     <ButtonComp
-      { ...others }
-      className={
-        classNames({
-          [`jsui-button-${varient}`]: !!varient
-        })
-      }
+      {...others}
+      theme={theme}
+      className={classNames({
+        [`jsui-button-${varient}`]: !!varient,
+      })}
     >
-      { children }
+      {children}
     </ButtonComp>
   )
 }
 
-ButtonComp.defaultProps = {
-  theme
-}
-
-export { Button }
+export default Button
