@@ -1,18 +1,17 @@
-// @flow strict
-import * as React from 'react'
-import styled from 'styled-components'
-import theme from '../theme'
-import shadows from '../utils/shadows'
+import * as React from "react";
+import styled from "styled-components";
+import theme from "../theme";
+import shadows from "../utils/shadows";
 
-const shadow = shadows[6]
+const shadow = shadows[6];
 
 export interface P {
-  theme: any,
-  width: string
+  theme: any;
+  width: string;
 }
 
 const DrawerStyle = styled.div`
-  width: ${(props: P) => props.width || '200px'};
+  width: ${(props: P) => props.width || "200px"};
   font-family: ${(props: P) => props.theme.sansFont};
   box-shadow: ${shadow};
   height: 100%;
@@ -26,23 +25,23 @@ const DrawerStyle = styled.div`
     }
     margin-bottom: 1.5rem;
   }
-`
+`;
 
 DrawerStyle.defaultProps = {
   theme
-}
+};
 
 export interface Props {
-  logo?: string,
+  logo?: string;
 }
 
 const Drawer: React.SFC<Props> = ({ logo, children, ...others }) => (
-  <DrawerStyle { ...others }>
+  <DrawerStyle {...others}>
     <div className="logo">
-      <img src={ logo } alt="logo" />
+      <img src={logo} alt="logo" />
     </div>
-    { children }
+    {children}
   </DrawerStyle>
-)
+);
 
-export default Drawer
+export default Drawer;

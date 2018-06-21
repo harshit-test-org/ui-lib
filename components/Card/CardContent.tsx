@@ -1,19 +1,17 @@
-import * as React from 'react'
-import theme from '../theme'
-import styled from 'styled-components'
+import * as React from "react";
+import theme from "../theme";
+import styled from "styled-components";
 
 const StyledCardContent = styled.div`
   padding: 0.5rem;
-`
+`;
 
 StyledCardContent.defaultProps = {
   theme
-}
+};
 
-const CardContent: React.SFC = (props) => {
-  return (
-    <StyledCardContent>{ props.children }</StyledCardContent>
-  )
-}
+const CardContent: React.SFC = props => {
+  return <StyledCardContent>{props.children}</StyledCardContent>;
+};
 
-export default CardContent
+export default CardContent;

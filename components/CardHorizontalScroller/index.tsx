@@ -1,3 +1,1 @@
-export {
-  default
-} from './CardHorizontalScroller'
+export { default } from "./CardHorizontalScroller";
