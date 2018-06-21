@@ -23,11 +23,10 @@ const DrawerMenuItemStyles = styled.div`
 `
 
 export interface Props {
-  children: string,
-  icon: React.ReactNode
+  icon?: React.ReactNode
 }
 
-const DrawerMenuItem = (props: Props) => {
+const DrawerMenuItem: React.SFC<Props> = (props) => {
   const { icon, children, ...others } = props
   return (
     <DrawerMenuItemStyles { ...others }>
@@ -45,4 +44,4 @@ DrawerMenuItemStyles.defaultProps = {
   theme
 }
 
-export { DrawerMenuItem }
+export default DrawerMenuItem

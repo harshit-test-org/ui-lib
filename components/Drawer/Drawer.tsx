@@ -33,11 +33,10 @@ DrawerStyle.defaultProps = {
 }
 
 export interface Props {
-  logo: string,
-  children: any
+  logo?: string,
 }
 
-const Drawer = ({ logo, children, ...others }: Props) => (
+const Drawer: React.SFC<Props> = ({ logo, children, ...others }) => (
   <DrawerStyle { ...others }>
     <div className="logo">
       <img src={ logo } alt="logo" />
@@ -46,4 +45,4 @@ const Drawer = ({ logo, children, ...others }: Props) => (
   </DrawerStyle>
 )
 
-export { Drawer }
+export default Drawer

@@ -56,12 +56,12 @@ export interface Props {
   component?: any
 }
 
-const TypographyComponent = ({
+const TypographyComponent: React.SFC<Props> = ({
   className,
   component,
   type = 'default',
   ...props
-}: Props) => {
+}) => {
   const Component =
     component ||
     (headlineMapping[type] && headlineMapping[type].type) ||
