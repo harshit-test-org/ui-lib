@@ -2,13 +2,9 @@
   "compilerOptions": {
     "baseUrl": ".",
     "outDir": "dist",
-    "module": "es2015",
-    "target": "es2017",
-    "lib": [
-      "es6",
-      "esnext",
-      "dom"
-    ],
+    "module": "commonjs",
+    "target": "es5",
+    "lib": ["es6", "esnext", "dom"],
     "sourceMap": true,
     "declaration": true,
     "jsx": "react",
@@ -20,15 +16,8 @@
     "noImplicitThis": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
-    "suppressImplicitAnyIndexErrors": true,
+    "suppressImplicitAnyIndexErrors": true
   },
-  "exclude": [
-    "node_modules",
-    "build",
-    "dist",
-    "rollup.config.js"
-  ],
-  "include": [
-    "components/**/*"
-  ]
+  "exclude": ["node_modules", "build", "dist", "rollup.config.js"],
+  "include": ["components/**/*"]
 }
