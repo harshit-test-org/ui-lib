@@ -54,6 +54,9 @@ export interface Props {
   className?: string;
   children?: any;
   component?: any;
+  margin?: number;
+  style?: React.CSSProperties;
+  color?: string;
 }
 
 const TypographyComponent: React.SFC<Props> = ({
@@ -95,8 +98,9 @@ const allStyles = Object.entries(headlineMapping).map(
 export interface TypographyStyledPropType {
   color?: string;
   margin?: number;
-  type: "h1" | "h2" | "h3" | "h4" | "h5" | "xl";
+  type?: "h1" | "h2" | "h3" | "h4" | "h5" | "xl";
   children?: any;
+  style?: React.CSSProperties;
 }
 
 const Typography = styled(TypographyComponent)`

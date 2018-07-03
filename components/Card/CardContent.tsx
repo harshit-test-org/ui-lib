@@ -10,7 +10,7 @@ StyledCardContent.defaultProps = {
   theme
 };
 
-const CardContent: React.SFC = props => {
+const CardContent: React.SFC<{ style?: React.CSSProperties }> = props => {
   return <StyledCardContent>{props.children}</StyledCardContent>;
 };
 

@@ -33,6 +33,7 @@ DrawerStyle.defaultProps = {
 
 export interface Props {
   logo?: string;
+  style?: React.CSSProperties;
 }
 
 const Drawer: React.SFC<Props> = ({ logo, children, ...others }) => (

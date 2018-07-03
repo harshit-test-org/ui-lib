@@ -12,8 +12,8 @@ StyledCardActions.defaultProps = {
   theme
 };
 
-const CardActions: React.SFC = props => {
-  return <StyledCardActions>{props.children}</StyledCardActions>;
+const CardActions: React.SFC<{ style: React.CSSProperties }> = props => {
+  return <StyledCardActions {...props}>{props.children}</StyledCardActions>;
 };
 
 export default CardActions;

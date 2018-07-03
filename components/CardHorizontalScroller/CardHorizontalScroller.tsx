@@ -66,10 +66,13 @@ const ChevronStyles = styled.button`
   ${(props: P) => (props.right ? "right: 0;" : "")};
 `;
 
-class CardHorizontalScroller extends React.Component<{
-  canScrollLeft: boolean;
-  canScrollRight: boolean;
-}> {
+class CardHorizontalScroller extends React.Component<
+  { style?: React.CSSProperties },
+  {
+    canScrollLeft?: boolean;
+    canScrollRight?: boolean;
+  }
+> {
   node: HTMLDivElement;
   state = {
     canScrollLeft: false,
@@ -92,9 +95,9 @@ class CardHorizontalScroller extends React.Component<{
     });
   }
   render() {
-    const { children } = this.props;
+    const { children, ...others } = this.props;
     return (
-      <HorizontalScrollBarContainer>
+      <HorizontalScrollBarContainer {...others}>
         {this.state.canScrollLeft && (
           <ChevronStyles onClick={() => this.handleScroll(-1)}>
             <ChevronLeft />

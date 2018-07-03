@@ -6,6 +6,7 @@ import theme from "../theme";
 
 export interface Props {
   title?: string;
+  style?: React.CSSProperties;
 }
 
 const StyledCardHeader = styled.div`

@@ -23,6 +23,7 @@ const DrawerMenuItemStyles = styled.div`
 
 export interface Props {
   icon?: React.ReactNode;
+  style?: React.CSSProperties;
 }
 
 const DrawerMenuItem: React.SFC<Props> = props => {

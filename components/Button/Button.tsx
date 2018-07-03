@@ -71,6 +71,7 @@ export interface Props {
    * Visual Apperance of button, defaults to primary
    */
   varient?: "secondary" | "inverted" | "danger";
+  style?: React.CSSProperties;
 }
 
 const Button: React.SFC<Props> = ({ varient, children, ...others }) => {

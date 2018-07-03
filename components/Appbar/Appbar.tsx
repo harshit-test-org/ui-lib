@@ -18,7 +18,7 @@ StyledAppBar.defaultProps = {
   theme
 };
 
-const Appbar: React.SFC = props => {
+const Appbar: React.SFC<{ style?: React.CSSProperties }> = props => {
   return <StyledAppBar {...props}>{props.children}</StyledAppBar>;
 };
 
