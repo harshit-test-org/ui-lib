@@ -72,6 +72,7 @@ export interface Props {
    */
   varient?: "secondary" | "inverted" | "danger";
   style?: React.CSSProperties;
+  className?: string;
 }
 
 const Button: React.SFC<Props> = ({ varient, children, ...others }) => {

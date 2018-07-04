@@ -67,7 +67,7 @@ const ChevronStyles = styled.button`
 `;
 
 class CardHorizontalScroller extends React.Component<
-  { style?: React.CSSProperties },
+  { style?: React.CSSProperties; className?: string },
   {
     canScrollLeft?: boolean;
     canScrollRight?: boolean;

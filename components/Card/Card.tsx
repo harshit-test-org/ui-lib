@@ -29,6 +29,7 @@ export interface Props {
   children: any;
   elevation: number;
   style?: React.CSSProperties;
+  className?: string;
 }
 
 const Card: React.SFC<Props> = ({ elevation, children, ...others }) => {
