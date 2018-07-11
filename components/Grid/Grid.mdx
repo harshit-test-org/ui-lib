@@ -1,0 +1,25 @@
+---
+name: Grid
+---
+
+import Grid,{ Cell } from './index.ts'
+import { Playground } from 'docz'
+
+# Grid
+
+Taken from styled-css-grid. Docs are here at https://styled-css-grid.js.org/
+
+<Playground>
+  <Grid
+    columns="100px 1fr 100px"
+    rows="minmax(45px, auto) 1fr minmax(45px, auto)"
+  >
+    <Cell width={3} style={{ background:'grey'}}>
+      <h1>Header</h1>
+    </Cell>
+    <Cell style={{ background:'teal'}}>Menu</Cell>
+    <Cell style={{ background:'rebeccapurple', minHeight:'50vh' }}>Content</Cell>
+    <Cell style={{ background:'tomato'}}>Ads</Cell>
+    <Cell style={{ background:'cornflowerblue' }} width={3}>Footer</Cell>
+  </Grid>
+</Playground>
