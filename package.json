@@ -1,6 +1,6 @@
 {
   "name": "javascript-af-ui",
-  "version": "0.0.26",
+  "version": "0.0.27",
   "description": "UI kit for javascript.af",
   "main": "./index.js",
   "repository": "https://github.com/javascript-af/ui-lib.git",
@@ -15,14 +15,14 @@
   ],
   "private": false,
   "scripts": {
-    "precommit": "lint-staged && yarn run test",
+    "precommit": "lint-staged && npm run test",
     "prebuild": "rimraf dist/",
     "copyfiles": "cp README.md dist/ && cp LICENSE dist/ && cp package.json dist/",
-    "build": "yarn run build:modules && yarn run copyfiles",
+    "build": "npm run build:modules && npm run copyfiles",
     "build:modules": "tsc",
     "dev": "docz dev",
     "build:docz": "docz build",
-    "prerelease": "yarn build",
+    "prerelease": "npm run build",
     "release": "npm publish dist"
   },
   "dependencies": {
