@@ -1,7 +1,7 @@
-import * as React from "react";
-import styled, { css, StyledComponentClass } from "styled-components";
-import classNames from "classnames";
-import theme from "../theme";
+import * as React from 'react';
+import styled, { css } from 'styled-components';
+import classNames from 'classnames';
+import theme from '../theme';
 
 export interface Headline {
   type: string;
@@ -18,57 +18,56 @@ const headlineMapping: {
   h5: Headline;
 } = {
   xl: {
-    type: "h1",
-    size: "3rem",
-    color: "rgba(0,0,0,0.75)"
+    type: 'h1',
+    size: '3rem',
+    color: 'rgba(0,0,0,0.75)'
   },
   h1: {
-    type: "h1",
-    size: "2.6rem",
-    color: "rgba(0,0,0,0.75)"
+    type: 'h1',
+    size: '2.6rem',
+    color: 'rgba(0,0,0,0.75)'
   },
   h2: {
-    type: "h2",
-    size: "2.3rem",
-    color: "rgba(0,0,0,0.87)"
+    type: 'h2',
+    size: '2.3rem',
+    color: 'rgba(0,0,0,0.87)'
   },
   h3: {
-    type: "h3",
-    size: "2.125rem",
-    color: "rgba(0,0,0,0.87)"
+    type: 'h3',
+    size: '2.125rem',
+    color: 'rgba(0,0,0,0.87)'
   },
   h4: {
-    type: "h4",
-    size: "1.5rem",
-    color: "rgba(0,0,0,0.87)"
+    type: 'h4',
+    size: '1.5rem',
+    color: 'rgba(0,0,0,0.87)'
   },
   h5: {
-    type: "h5",
-    size: "1.25rem",
-    color: "rgba(0,0,0,0.87)"
+    type: 'h5',
+    size: '1.25rem',
+    color: 'rgba(0,0,0,0.87)'
   }
 };
 
 export interface Props {
-  type?: "h1" | "h2" | "h3" | "h4" | "h5" | "xl";
+  type?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'xl' | 'default';
   className?: string;
-  children?: any;
   component?: any;
   margin?: number;
   style?: React.CSSProperties;
   color?: string;
 }
 
-const TypographyComponent: React.SFC<Props> = ({
+const TypographyComponent = ({
   className,
   component,
-  type = "default",
+  type = 'default',
   ...props
-}) => {
+}: Props) => {
   const Component =
     component ||
     (headlineMapping[type] && headlineMapping[type].type) ||
-    "span";
+    'span';
   return (
     <Component
       className={classNames(className, `jsui-typo-${type}`)}
@@ -98,19 +97,19 @@ const allStyles = Object.entries(headlineMapping).map(
 export interface TypographyStyledPropType {
   color?: string;
   margin?: number;
-  type?: "h1" | "h2" | "h3" | "h4" | "h5" | "xl";
+  type?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'xl';
   children?: any;
   style?: React.CSSProperties;
 }
 
-const Typography = styled(TypographyComponent)`
+const Typography = styled(TypographyComponent as any)`
   ${(props: TypographyStyledPropType) =>
-    typeof props.margin !== "undefined" ? `margin: ${props.margin}px;` : ""}
+    typeof props.margin !== 'undefined' ? `margin: ${props.margin}px;` : ''}
   font-family: ${props => props.theme.sansFont};
   ${allStyles.map(i => i)}
    font-weight: normal;
   ${(props: TypographyStyledPropType) =>
-    props.color ? `color:${props.color} !important;` : ""}
+    props.color ? `color:${props.color} !important;` : ''}
 `;
 
 Typography.defaultProps = {

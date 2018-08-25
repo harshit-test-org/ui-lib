@@ -1,8 +1,8 @@
-import * as React from "react";
-import styled, { css } from "styled-components";
-import theme from "../theme";
-import classNames from "classnames";
-import shadows from "../utils/shadows";
+import * as React from 'react';
+import styled, { css } from 'styled-components';
+import theme from '../theme';
+import classNames from 'classnames';
+import shadows from '../utils/shadows';
 
 const CardStyled = styled.div`
   background: #ffffff;
@@ -36,10 +36,12 @@ const Card: React.SFC<Props> = ({ elevation, children, ...others }) => {
   return (
     <CardStyled
       {...others}
-      className={classNames({
-        [`jsui-card-shadow-${elevation}`]: !!elevation
-      })}
-    >
+      className={classNames(
+        {
+          [`jsui-card-shadow-${elevation}`]: elevation
+        },
+        others.className
+      )}>
       {children}
     </CardStyled>
   );

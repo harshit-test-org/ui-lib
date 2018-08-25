@@ -1,5 +1,5 @@
 export default {
-  sansFont: `"Fira Sans", sans-serif`,
+  sansFont: `"Kosugi", sans-serif`,
   monospaceFont: `"Fira Mono", sans-serif`,
   primaryColor: '#6200EE',
   primaryDarkColor: '#0400BA',
@@ -10,4 +10,4 @@ export default {
   dangerDarkColor: '#BA000D',
   primaryGradient:
     'linear-gradient(to bottom, #6200ee 0%,#4600aa 52%,#310077 100%);'
-}
+};

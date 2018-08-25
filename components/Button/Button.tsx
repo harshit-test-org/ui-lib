@@ -1,7 +1,7 @@
-import * as React from "react";
-import styled from "styled-components";
-import defaultTheme from "../theme";
-import classNames from "classnames";
+import * as React from 'react';
+import styled from 'styled-components';
+import defaultTheme from '../theme';
+import classNames from 'classnames';
 
 const ButtonComp = styled.button`
   font-family: ${props => props.theme.monospaceFont};
@@ -66,21 +66,25 @@ ButtonComp.defaultProps = {
   theme: defaultTheme
 };
 
-export interface Props extends React.HTMLAttributes<HTMLButtonElement> {
+export interface Props {
   /**
    * Visual Apperance of button, defaults to primary
    */
-  varient?: "secondary" | "inverted" | "danger";
+  varient?: 'secondary' | 'inverted' | 'danger';
+  className?: string;
+  onClick?: () => any;
 }
 
 const Button: React.SFC<Props> = ({ varient, children, ...others }) => {
   return (
     <ButtonComp
       {...others}
-      className={classNames({
-        [`jsui-button-${varient}`]: !!varient
-      })}
-    >
+      className={classNames(
+        {
+          [`jsui-button-${varient}`]: varient
+        },
+        others.className
+      )}>
       {children}
     </ButtonComp>
   );
