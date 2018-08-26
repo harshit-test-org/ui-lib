@@ -14,7 +14,7 @@ const CardContent: React.SFC<{
   style?: React.CSSProperties;
   className?: string;
 }> = props => {
-  return <StyledCardContent>{props.children}</StyledCardContent>;
+  return <StyledCardContent {...props}>{props.children}</StyledCardContent>;
 };
 
 export default CardContent;

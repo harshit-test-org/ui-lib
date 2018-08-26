@@ -1,5 +1,5 @@
 export default {
-  sansFont: `"Kosugi", sans-serif`,
+  sansFont: `"Fira Sans", sans-serif`,
   monospaceFont: `"Fira Mono", sans-serif`,
   primaryColor: '#6200EE',
   primaryDarkColor: '#0400BA',
