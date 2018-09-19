@@ -18,27 +18,25 @@ CardHorizontalScroller
 
 <Playground>
   <CardHorizontalScroller>
-    {Array.from({length: 10}).map((_,i)=>(
+    {Array.from({ length: 10 }).map((_, i) => (
       <Card
-      key={i}
-      elevation={ 2 }
-      style={ {
-        minWidth: '300px'
-      } }
-    >
-      <CardHeader title="React" />
-      <CardContent>
-      <Typography>
-        React is Javascript library for making UI
-        interfaces. It makes simple things like form
-        handling hard and makes hard things like reusable
-        components simple. It is awesome anyways.
-      </Typography>
-      </CardContent>
-      <CardActions>
-        <Button>View</Button>
-      </CardActions>
-    </Card>
+        key={i}
+        elevation={2}
+        style={{
+          minWidth: '300px'
+        }}>
+        <CardHeader title="React" />
+        <CardContent>
+          <Typography>
+            React is Javascript library for making UI interfaces. It makes
+            simple things like form handling hard and makes hard things like
+            reusable components simple. It is awesome anyways.
+          </Typography>
+        </CardContent>
+        <CardActions>
+          <Button>View</Button>
+        </CardActions>
+      </Card>
     ))}
   </CardHorizontalScroller>
 </Playground>
