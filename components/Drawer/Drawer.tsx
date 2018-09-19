@@ -1,7 +1,7 @@
-import * as React from "react";
-import styled from "styled-components";
-import theme from "../theme";
-import shadows from "../utils/shadows";
+import * as React from 'react';
+import styled from 'styled-components';
+import theme from '../theme';
+import shadows from '../utils/shadows';
 
 const shadow = shadows[6];
 
@@ -11,13 +11,13 @@ export interface P {
 }
 
 const DrawerStyle = styled.div`
-  width: ${(props: P) => props.width || "200px"};
+  width: ${(props: P) => props.width || '200px'};
   font-family: ${(props: P) => props.theme.sansFont};
   box-shadow: ${shadow};
   height: 100%;
   padding: 0.5rem;
   min-height: 100vh;
-  background: ${(props: P) => props.theme.primaryGradient};
+  background: ${(props: P) => props.theme.primaryColor};
   .logo {
     img {
       width: 50px;

@@ -1,11 +1,11 @@
 export default {
+  primaryColor: '#131833',
+  primaryLightColor: '#452E3C',
+  secondaryColor: '#FFC600',
+  secondaryDarkColor: '#D1A000',
   sansFont: `"Fira Sans", sans-serif`,
   monospaceFont: `"Fira Mono", sans-serif`,
-  primaryColor: '#6200EE',
-  primaryDarkColor: '#0400BA',
-  primaryLightColor: '#6F0AFF',
-  secondaryColor: '#BDC3C7',
-  secondaryDarkColor: '#8D9396',
+  primaryDarkColor: '#0b2942',
   dangerColor: '#F44336',
   dangerDarkColor: '#BA000D',
   primaryGradient:
