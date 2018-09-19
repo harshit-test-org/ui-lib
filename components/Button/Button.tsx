@@ -4,7 +4,7 @@ import defaultTheme from '../theme';
 import classNames from 'classnames';
 
 const ButtonComp = styled.button`
-  font-family: ${props => props.theme.monospaceFont};
+  font-family: ${props => props.theme.sansFont};
   font-size: 1rem;
   background: ${props => props.theme.primaryColor};
   color: #ffffff;
@@ -15,13 +15,18 @@ const ButtonComp = styled.button`
   outline: none;
   border-radius: 1.2rem;
   cursor: pointer;
-  transition: 0.3s ease-in-out all;
+  transition: 0.2s ease-in-out all;
   &.jsui-button-secondary {
     background: ${props => props.theme.secondaryColor};
     color: #ffffff;
   }
   &.jsui-button-secondary:hover {
     background: ${props => props.theme.secondaryDarkColor};
+    color: #ffffff;
+  }
+
+  &[disabled].jsui-button-secondary:hover {
+    background: ${props => props.theme.secondaryColor};
     color: #ffffff;
   }
   &.jsui-button-danger {
@@ -32,8 +37,8 @@ const ButtonComp = styled.button`
     background: ${props => props.theme.dangerDarkColor};
     color: #ffffff;
   }
-  &.jsui-button-secondary:hover {
-    background: ${props => props.theme.schoolDarkColor};
+  &[disabled].jsui-button-danger:hover {
+    background: ${props => props.theme.dangerColor};
     color: #ffffff;
   }
   &.jsui-button-inverted {
@@ -47,6 +52,11 @@ const ButtonComp = styled.button`
     opacity: 1;
     border: 2px solid ${props => props.theme.primaryColor};
   }
+  &[disabled].jsui-button-inverted:hover {
+    background: #ffffff;
+    color: ${props => props.theme.primaryColor};
+    border: 2px solid ${props => props.theme.primaryDarkColor};
+  }
   &:hover {
     color: #ffffff;
     opacity: 1;
@@ -54,9 +64,16 @@ const ButtonComp = styled.button`
     border: none;
   }
   &:disabled {
-    opacity: 0.6;
+    opacity: 0.4 !important;
     cursor: not-allowed;
   }
+
+  &[disabled]:hover {
+    color: #ffffff;
+    background: ${props => props.theme.primaryColor};
+    border: none;
+  }
+
   &:active {
     opacity: 1;
   }

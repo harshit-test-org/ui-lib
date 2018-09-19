@@ -63,19 +63,27 @@ export interface Props {
   style?: React.CSSProperties;
   color?: string;
   theme?: any;
+  children: any;
 }
 
 const TypographyComponent = ({
   className,
   theme,
+  children,
   type = 'default',
   ...props
 }: Props) => {
+  if (typeof children === 'undefined') {
+    // tslint:disable-next-line:no-console
+    console.warn('jsui: Children are required for typography');
+    return null;
+  }
   const Component =
     (headlineMapping[type] && headlineMapping[type].type) || 'span';
   return (
     <Component
       className={classNames(className, `jsui-typo-${type}`)}
+      children={children}
       {...props}
     />
   );
@@ -103,7 +111,7 @@ export interface TypographyStyledPropType {
   color?: string;
   margin?: number;
   type?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'xl';
-  children?: any;
+  children: any;
   style?: React.CSSProperties;
 }
 
@@ -113,6 +121,7 @@ const Typography = styled(TypographyComponent as any)`
       ? `margin: ${props.margin}px;`
       : 'margin: 0.625rem 0'}
   font-family: ${props => props.theme.sansFont};
+  font-size: 1rem;
   ${allStyles.map(i => i)}
    font-weight: normal;
   ${(props: TypographyStyledPropType) =>

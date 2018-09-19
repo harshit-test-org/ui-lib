@@ -9,9 +9,8 @@ import { PropsTable, Playground } from 'docz'
 
 Typography
 
-
 <Playground>
-  <Typography type="xl">Heading XL</Typography>
+  <Typography type="xl">Heading xl</Typography>
   <Typography type="h1">Heading 1</Typography>
   <Typography type="h2">Heading 2</Typography>
   <Typography type="h3">Heading 3</Typography>
@@ -22,7 +21,13 @@ Typography
   </Typography>
 </Playground>
 
-
 ## Properties
 
-THIS COMPONENT NEEDS A REWRITE
+| Properties | type                  | required |
+| ---------- | --------------------- | -------- |
+| as         | string                | false    |
+| type       | `h1` to `h6` and `xl` | false    |
+| color      | string                | false    |
+| margin     | number                | false    |
+| style      | CSSProperties         | false    |
+| children   | any                   | true     |
